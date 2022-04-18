@@ -170,6 +170,10 @@ sudo sed -i "s/keystore/$kstpw/g" .env.password
 echo
 echo -e "Done..."
 
+#Replacing startEI with correct version
+
+cp startEI.sh /opt/docker/goplugin/plugin-deployment/
+
 echo -e "\n\n################# Bringing up node & database #################\n\n"
 
 sudo docker-compose up -d
