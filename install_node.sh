@@ -176,7 +176,9 @@ echo -e "Done..."
 
 #Replacing startEI with correct version
 
-cp startEI.sh /opt/docker/goplugin/plugin-deployment/
+rm /opt/docker/goplugin/plugin-deployment/startEI.sh &&
+
+chmod u+x startEI.sh && cp startEI.sh /opt/docker/goplugin/plugin-deployment/
 
 echo -e "\n\n################# Bringing up node & database #################\n\n"
 
