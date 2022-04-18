@@ -1,0 +1,8 @@
+/root/.plugin/log.jsonl { 
+rotate 6 
+daily 
+compress 
+missingok 
+notifempty 
+maxage 7 
+} 
