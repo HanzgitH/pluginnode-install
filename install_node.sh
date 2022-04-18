@@ -178,7 +178,7 @@ echo -e "Done..."
 
 rm /opt/docker/goplugin/plugin-deployment/startEI.sh &&
 
-chmod u+x startEI.sh && cp startEI.sh /opt/docker/goplugin/plugin-deployment/
+chmod u+x startEI.sh && mv startEI.sh /opt/docker/goplugin/plugin-deployment/
 
 echo -e "\n\n################# Bringing up node & database #################\n\n"
 
