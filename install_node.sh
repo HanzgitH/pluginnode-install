@@ -203,9 +203,9 @@ sudo docker exec --env-file ei.env -it plinode /bin/bash -c ". ~/.profile && pm2
 
 echo -e "\n\n################# Creating service for automatic startup after reboot #################\n\n"
 
-cp /root/plugin-deployment/oneClickDeploy/nodeboot.sh /usr/local/sbin/
+cp /root/pluginnode-install/nodeboot.sh /usr/local/sbin/
 chmod +x /usr/local/sbin/nodeboot.sh
-cp /root/plugin-deployment/oneClickDeploy/nodeboot.service /etc/systemd/system/nodeboot.service
+cp /root/pluginnode-install/nodeboot.service /etc/systemd/system/nodeboot.service
 chmod +x /etc/systemd/system/nodeboot.service
 systemctl enable nodeboot.service
 systemctl daemon-reload
