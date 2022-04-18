@@ -1,8 +1,0 @@
-/root/.pm2/logs/*.log { 
-rotate 6 
-daily 
-compress 
-missingok 
-notifempty 
-maxage 7 
-} 
