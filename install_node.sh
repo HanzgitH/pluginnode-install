@@ -11,9 +11,7 @@ sudo apt update && sudo apt upgrade -y
 
 echo -e "\n\n################# Installing git & golang #################\n\n"
 
-sudo apt-get install git -y
-
-sudo apt-get install golang -y
+sudo apt-get install git -y && sudo apt-get install golang -y
 
 echo -e "\n\n################# Changing Directory #################\n\n"
 
