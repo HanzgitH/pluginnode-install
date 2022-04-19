@@ -6,7 +6,7 @@
 
 #Must be installed in /root directory.
 
-#autoreboot and logrotate added, also sleep time added to fix the job creation and echo from actioning.
+#autoreboot and logrotate added, also sleep time added, this was to allow the job creation to take place, so the echo has time to capture the information.
 
 #Credit goes to nmzn who created this install.
 
