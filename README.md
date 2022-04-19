@@ -1,6 +1,8 @@
 # pluginnode-install
 
-#This is a temporary work around until the new docker install is released by the team. It fixed the RPC syntax error, also auto reboot included.
+#This is a temporary work around until the new docker install is released by the team.
+
+#This fixes the RPC syntax error, also auto reboot included.
 
 #Must be installed in /root directory. 
 
