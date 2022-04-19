@@ -210,6 +210,12 @@ sudo sed -i "s|"FXllNVlkD8ADVjFr46teIGRaeWEZXsYVQRMdfmu+UmRV4aysZ30E/OkNadysLZsA
 
 sudo docker exec --env-file ei.env -it plinode /bin/bash -c ". ~/.profile && pm2 start /pluginAdm/startEI.sh"
 
+echo -e "\n\n################# Adding logrotate to docker, this will compress and delete logs every 7 days #################\n\n"
+
+sudo docker exec -i plinode /bin/bash -c "apt-get install logrotate -y" &&
+sudo docker cp /root/pluginnode-install/pm2logs plinode:/etc/logrotate.d/pm2logs &&
+sudo docker cp /root/pluginnode-install/log.jsonl plinode:/etc/logrotate.d/log.jsonl && 
+sudo docker exec -i plinode /bin/bash -c "logrotate -vf /etc/logrotate.conf"
 
 echo -e "\n\n################# Creating service for automatic startup after reboot #################\n\n"
 
@@ -219,6 +225,7 @@ cp /root/pluginnode-install/nodeboot.service /etc/systemd/system/nodeboot.servic
 chmod +x /etc/systemd/system/nodeboot.service
 systemctl enable nodeboot.service
 systemctl daemon-reload
+
 
 echo -e "\n\n################# Done #################\n\n"
 
