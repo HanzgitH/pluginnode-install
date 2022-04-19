@@ -2,7 +2,7 @@
 
 echo -e "\n\n## Plugin Docker Install -- https://goplugin.co -- made by nmzn (Twitter @itsnmzn) 01/2022\n"
 echo -e "\n\n## Please make sure to read the readme.md after installing!!!"
-echo -e "## Version 0.2 \n\n"
+echo -e "## Version 0.3 \n\n"
 echo
 echo -e "\n\n################# Updating System #################\n\n"
 
