@@ -4,7 +4,9 @@
 
 #This fixes the RPC syntax error, which caused the external initiator to error, also auto reboot included.
 
-#Must be installed in /root directory. 
+#Must be installed in /root directory.
+
+#Credit goes to nmzn who created this install.
 
 # Please take note that the "./install_node.sh" does not include the docker installation. If you have no Docker installed on your VPS you need to run the "./install_docker.sh" first
 
