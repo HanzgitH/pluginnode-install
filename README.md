@@ -2,7 +2,7 @@
 
 #This is a temporary work around until the new docker install is released by the team.
 
-#This fixes the RPC syntax error, which caused the external initiator to error, also auto reboot included.
+#This fixes the RPC syntax error located in startEI.sh, which caused the external initiator to error, also auto reboot included.
 
 #Must be installed in /root directory.
 
