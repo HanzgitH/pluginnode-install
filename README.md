@@ -6,7 +6,7 @@
 
 #autoreboot and logrotate added, also sleep time added, this was to allow the job creation to take place, so the echo has time to capture the information.
 
-#This fixes the RPC syntax error located in startEI.sh, which caused the external initiator to error.
+#New startEI.sh added, this fixes the RPC syntax error located in startEI.sh, which caused the external initiator to error.
 
 #Credit goes to nmzn who created this install.
 
