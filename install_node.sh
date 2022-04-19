@@ -174,7 +174,7 @@ sudo sed -i "s/keystore/$kstpw/g" .env.password
 echo
 echo -e "Done..."
 
-#Replacing startEI with correct version
+### Replacing startEI with correct version ###
 
 rm /opt/docker/goplugin/plugin-deployment/startEI.sh &&
 
