@@ -193,7 +193,7 @@ sleep 10
 echo
 echo -e "\n\n################# Installing External Initiators #################\n\n"
 
-sudo docker exec -it plinode /bin/bash -c ". ~/.profile && plugin admin login -f /pluginAdm/.env.apicred"
+sudo docker exec -it plinode /bin/bash -c ". ~/.profile && plugin admin login -f /pluginAdm/.env.apicred" &&
 
 JOBKEYS=$(sudo docker exec -it plinode /bin/bash -c ". ~/.profile && plugin initiators create pluginei http://localhost:8080/jobs" | grep pluginei)
 sudo sh -c "echo $JOBKEYS > eivar.env"
