@@ -233,3 +233,5 @@ systemctl daemon-reload
 echo -e "\n\n################# Done #################\n\n"
 
 echo -e "\n\n################# Node Setup completed. Oracle Deployment Part has to be done manually. Please see: https://docs.goplugin.co for further information #################\n\n"
+
+echo -e "\n\n################# All docker files are saved in /opt/docker/goplugin/plugin-deployment #################\n\n"
