@@ -214,8 +214,7 @@ echo -e "\n\n################# Adding logrotate to docker, this will compress an
 
 sudo docker exec -i plinode /bin/bash -c "apt-get install logrotate -y" &&
 sudo docker cp /root/pluginnode-install/pm2logs plinode:/etc/logrotate.d/pm2logs &&
-sudo docker cp /root/pluginnode-install/log.jsonl plinode:/etc/logrotate.d/log.jsonl && 
-sudo docker exec -i plinode /bin/bash -c "logrotate -vf /etc/logrotate.conf"
+sudo docker cp /root/pluginnode-install/log.jsonl plinode:/etc/logrotate.d/log.jsonl
 
 echo -e "\n\n################# Creating service for automatic startup after reboot #################\n\n"
 
