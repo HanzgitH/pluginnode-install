@@ -6,7 +6,7 @@
 
 #Must be installed in /root directory.
 
-#autoreboot and logrotate added.
+#autoreboot and logrotate added, also sleep time added to fix the job creation and echo from actioning.
 
 #Credit goes to nmzn who created this install.
 
