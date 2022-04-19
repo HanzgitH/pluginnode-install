@@ -1,12 +1,12 @@
 # pluginnode-install
 
-#This is a temporary work around until the new docker install is released by the team.
-
-#This fixes the RPC syntax error located in startEI.sh, which caused the external initiator to error, also auto reboot included.
+#This is a work around until the new docker install is released by the team.
 
 #Must be installed in /root directory.
 
 #autoreboot and logrotate added, also sleep time added, this was to allow the job creation to take place, so the echo has time to capture the information.
+
+#This fixes the RPC syntax error located in startEI.sh, which caused the external initiator to error.
 
 #Credit goes to nmzn who created this install.
 
