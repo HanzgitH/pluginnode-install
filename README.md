@@ -1,5 +1,9 @@
 # pluginnode-install
 
+#This is a temporary work around until the new docker install is released by the team. It fixed the RPC syntax error, also auto reboot included.
+
+#Must be installed in /root directory. 
+
 # Please take note that the "./install_node.sh" does not include the docker installation. If you have no Docker installed on your VPS you need to run the "./install_docker.sh" first
 
 Guide on how to deploy Contracts: https://github.com/nmzn/deployment-guide
