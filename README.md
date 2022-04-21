@@ -28,7 +28,7 @@ Contents:
   Step 1:
       
           
-    sudo git clone https://github.com/HanzgitH/pluginnode-install.git && cd pluginnode-install && sudo chmod +x install_docker.sh && sudo chmod +x install_node.sh
+    sudo git clone https://github.com/HanzgitH/pluginnode-install.git && cd pluginnode-install && sudo chmod +x install_docker.sh && sudo chmod +x install_node.sh && sudo chmod +x install_EI.sh
       
   
   Step 2 (optional if needed):
