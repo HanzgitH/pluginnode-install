@@ -214,7 +214,7 @@ sudo sed -i "s|"FXllNVlkD8ADVjFr46teIGRaeWEZXsYVQRMdfmu+UmRV4aysZ30E/OkNadysLZsA
 
 sleep 5
 
-sudo docker exec --env-file ei.env -it plinode /bin/bash -c ". ~/.profile && pm2 restart 1 /pluginAdm/startEI.sh" &&
+sudo docker exec --env-file ei.env -it plinode /bin/bash -c ". ~/.profile && pm2 start /pluginAdm/startEI.sh"" &&
 
 sleep 5
 
