@@ -4,6 +4,7 @@ echo -e "\n\n################# Installing External Initiators #################\
 
 echo
 echo -e "\n\n################# Creating name:pluginei and mainnet:pluginei to http://localhost:8080/jobs #################\n\n
+sleep 3
 
 cd /opt/docker/goplugin/plugin-deployment
 
