@@ -181,19 +181,20 @@ sudo docker-compose up -d
 
 echo -e "\n\n################# Starting Node #################\n\n"
 
-sed -i 's/localhost/127.0.0.1/g' /opt/docker/goplugin/plugin-deployment/startEI.sh
-
 sudo docker exec -it plinode /bin/bash -c ". ~/.profile && pm2 start /pluginAdm/startNode.sh"
 echo
 echo -e "Waiting for Node to come up... (15 Seconds)"
+
 sleep 15
+
 echo
-echo -e "\n\n################# Installing External Initiators (10 seconds) #################\n\n"
-sleep 10
+echo -e "\n\n################# Installing External Initiators (20 seconds) #################\n\n"
+
+sleep 20
 
 sudo docker exec -it plinode /bin/bash -c ". ~/.profile && plugin admin login -f /pluginAdm/.env.apicred"
 
-JOBKEYS=$(sudo docker exec -it plinode /bin/bash -c ". ~/.profile && plugin initiators create pluginei http://127.0.0.1:8080/jobs" | grep pluginei)
+JOBKEYS=$(sudo docker exec -it plinode /bin/bash -c ". ~/.profile && plugin initiators create pluginei http://localhost:8080/jobs" | grep pluginei)
 sudo sh -c "echo $JOBKEYS > eivar.env"
 
 ICACCESSKEY=$(echo $JOBKEYS | sed 's/\ //g' | awk -F"║" '{print $4};')
