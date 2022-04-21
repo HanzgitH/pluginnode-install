@@ -182,7 +182,7 @@ sudo docker-compose up -d &&
 echo -e "\n\n################# Awaiting connection for pgsql db #################\n\n"
 
 until docker container exec -it psql_ei pg_isready; do
-    >&2 echo "Postgres is starting, awating connectio please wait"
+    >&2 echo "Postgres is starting, awating connection please wait"
 sleep 5
 done
 
