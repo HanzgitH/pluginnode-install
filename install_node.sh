@@ -12,7 +12,7 @@ sudo apt update && sudo apt upgrade -y
 echo
 echo -e "\n\n################# Installing golang #################\n\n"
 
-sudo apt-get install golang -y &&
+sudo apt-get install golang -y && sudo apt update
 
 echo -e "\n\n################# Changing Directory #################\n\n"
 
