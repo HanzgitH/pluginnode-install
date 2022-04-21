@@ -186,7 +186,7 @@ echo
 echo -e "Waiting for Node to come up... (10 Seconds)"
 sleep 10
 echo
-echo -e "\n\n################# Installing External Initiators #################\n\n"
+echo -e "\n\n################# Installing External Initiators (15 seconds) #################\n\n"
 sleep 15
 
 sudo docker exec -it plinode /bin/bash -c ". ~/.profile && plugin admin login -f /pluginAdm/.env.apicred"
