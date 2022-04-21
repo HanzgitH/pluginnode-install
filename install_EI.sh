@@ -5,6 +5,8 @@ echo -e "\n\n################# Installing External Initiators #################\
 echo
 echo -e "\n\n################# Creating name:pluginei and mainnet:pluginei to http://localhost:8080/jobs #################\n\n
 
+cd /opt/docker/goplugin/plugin-deployment
+
 sudo docker exec -it plinode /bin/bash -c ". ~/.profile && plugin admin login -f /pluginAdm/.env.apicred" &&
 
 JOBKEYS=$(sudo docker exec -it plinode /bin/bash -c ". ~/.profile && plugin initiators create pluginei http://localhost:8080/jobs" | grep pluginei) &&
