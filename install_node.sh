@@ -181,13 +181,15 @@ sudo docker-compose up -d
 
 echo -e "\n\n################# Starting Node #################\n\n"
 
+sed -i 's/localhost/127.0.0.1/g' /opt/docker/goplugin/plugin-deployment/startEI.sh
+
 sudo docker exec -it plinode /bin/bash -c ". ~/.profile && pm2 start /pluginAdm/startNode.sh"
 echo
-echo -e "Waiting for Node to come up... (10 Seconds)"
-sleep 10
-echo
-echo -e "\n\n################# Installing External Initiators (15 seconds) #################\n\n"
+echo -e "Waiting for Node to come up... (15 Seconds)"
 sleep 15
+echo
+echo -e "\n\n################# Installing External Initiators (10 seconds) #################\n\n"
+sleep 10
 
 sudo docker exec -it plinode /bin/bash -c ". ~/.profile && plugin admin login -f /pluginAdm/.env.apicred"
 
