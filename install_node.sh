@@ -9,9 +9,13 @@ echo -e "\n\n################# Updating System #################\n\n"
 cd
 sudo apt update && sudo apt upgrade -y &&
 
+sleep 5
+
 echo -e "\n\n################# Installing golang #################\n\n"
 
 sudo apt-get install golang -y &&
+
+sleep 5
 
 echo -e "\n\n################# Changing Directory #################\n\n"
 
@@ -188,11 +192,15 @@ echo
 echo -e "\n\n################# Installing External Initiators #################\n\n"
 
 sudo docker exec -it plinode /bin/bash -c ". ~/.profile && plugin admin login -f /pluginAdm/.env.apicred" &&
-sleep 3
+
+sleep 2
+
+echo
+echo -e "\n\n################# Creating name:pluginei and mainnet:pluginei to http://localhost:8080/jobs #################\n\n" &&
+
 
 JOBKEYS=$(sudo docker exec -it plinode /bin/bash -c ". ~/.profile && plugin initiators create pluginei http://localhost:8080/jobs" | grep pluginei) && sleep 5
 sudo sh -c "echo $JOBKEYS > eivar.env" &&
-sleep 5
 
 ICACCESSKEY=$(echo $JOBKEYS | sed 's/\ //g' | awk -F"║" '{print $4};') 
 ICSECRET=$(echo $JOBKEYS | sed 's/\ //g' | awk -F"║" '{print $5};') 
@@ -214,7 +222,7 @@ echo -e "\n\n################# Adding logrotate to docker, this will compress an
 
 sudo docker exec -i plinode /bin/bash -c "apt-get install logrotate -y" &&
 sudo docker cp /root/pluginnode-install/pm2logs plinode:/etc/logrotate.d/pm2logs &&
-sudo docker cp /root/pluginnode-install/log.jsonl plinode:/etc/logrotate.d/log.jsonl
+sudo docker cp /root/pluginnode-install/log.jsonl plinode:/etc/logrotate.d/log.jsonl &&
 
 echo -e "\n\n################# Creating service for automatic startup after reboot #################\n\n"
 
