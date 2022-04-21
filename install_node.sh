@@ -1,21 +1,18 @@
-##Install Script for plugin nodes via Docker.
+###Install Script for plugin nodes via Docker.
 
 echo -e "\n\n## Plugin Docker Install -- https://goplugin.co -- made by nmzn (Twitter @itsnmzn) 01/2022\n"
 echo -e "\n\n## Please make sure to read the readme.md after installing!!!"
-echo -e "## Version 0.3 \n\n"
+echo -e "## Version 0.2 \n\n"
 echo
 echo -e "\n\n################# Updating System #################\n\n"
 
 cd
-sudo apt update && sudo apt upgrade -y &&
+sudo apt update && sudo apt upgrade -y
 
-sleep 5
-
+echo
 echo -e "\n\n################# Installing golang #################\n\n"
 
 sudo apt-get install golang -y &&
-
-sleep 5
 
 echo -e "\n\n################# Changing Directory #################\n\n"
 
@@ -180,7 +177,7 @@ echo -e "Done..."
 
 echo -e "\n\n################# Bringing up node & database #################\n\n"
 
-sudo docker-compose up -d &&
+sudo docker-compose up -d
 
 echo -e "\n\n################# Starting Node #################\n\n"
 
@@ -189,33 +186,24 @@ echo
 echo -e "Waiting for Node to come up... (10 Seconds)"
 sleep 10
 echo
-echo -e "\n\n################# Now install External Initiator (EI) #################\n\n"
-
 echo -e "\n\n################# Installing External Initiators #################\n\n"
 
-echo
-echo -e "\n\n################# Creating name:pluginei and mainnet:pluginei to http://localhost:8080/jobs #################\n\n
-sleep 3
+sudo docker exec -it plinode /bin/bash -c ". ~/.profile && plugin admin login -f /pluginAdm/.env.apicred"
 
-sudo docker exec -it plinode /bin/bash -c ". ~/.profile && plugin admin login -f /pluginAdm/.env.apicred" &&
+JOBKEYS=$(sudo docker exec -it plinode /bin/bash -c ". ~/.profile && plugin initiators create pluginei http://localhost:8080/jobs" | grep pluginei)
+sudo sh -c "echo $JOBKEYS > eivar.env"
 
-JOBKEYS=$(sudo docker exec -it plinode /bin/bash -c ". ~/.profile && plugin initiators create pluginei http://localhost:8080/jobs" | grep pluginei) &&
-sudo sh -c "echo $JOBKEYS > eivar.env" &&
-
-ICACCESSKEY=$(echo $JOBKEYS | sed 's/\ //g' | awk -F"║" '{print $4};') 
-ICSECRET=$(echo $JOBKEYS | sed 's/\ //g' | awk -F"║" '{print $5};') 
-CIACCESSKEY=$(echo $JOBKEYS | sed 's/\ //g' | awk -F"║" '{print $6};') 
-CISECRET=$(echo $JOBKEYS | sed 's/\ //g' | awk -F"║" '{print $7};') 
+ICACCESSKEY=$(echo $JOBKEYS | sed 's/\ //g' | awk -F"║" '{print $4};')
+ICSECRET=$(echo $JOBKEYS | sed 's/\ //g' | awk -F"║" '{print $5};')
+CIACCESSKEY=$(echo $JOBKEYS | sed 's/\ //g' | awk -F"║" '{print $6};')
+CISECRET=$(echo $JOBKEYS | sed 's/\ //g' | awk -F"║" '{print $7};')
 
 sudo sed -i "s|"cc763c8ca9fe48508883f6d39f818ccf"|$ICACCESSKEY|g" ei.env
 sudo sed -i "s|"jEG8wzejfexfjAeZWBy8SzS7XV+SfV22j0eq7CEnyc6SSsd35PtQlESP2RhYs1am"|$ICSECRET|g" ei.env
 sudo sed -i "s|"pKgKE+XNYbU2FRX207LObetsCx56bGPXenU3XpUelAdRb73bXBE22tSLjPviRUav"|$CIACCESSKEY|g" ei.env
-sudo sed -i "s|"FXllNVlkD8ADVjFr46teIGRaeWEZXsYVQRMdfmu+UmRV4aysZ30E/OkNadysLZsA"|$CISECRET|g" ei.env &&
+sudo sed -i "s|"FXllNVlkD8ADVjFr46teIGRaeWEZXsYVQRMdfmu+UmRV4aysZ30E/OkNadysLZsA"|$CISECRET|g" ei.env
 
-sleep 5
-
-sudo docker exec --env-file ei.env -it plinode /bin/bash -c ". ~/.profile && pm2 start /pluginAdm/startEI.sh" &&
-
+sudo docker exec --env-file ei.env -it plinode /bin/bash -c ". ~/.profile && pm2 start /pluginAdm/startEI.sh"
 sleep 5
 
 echo -e "\n\n################# Adding logrotate to docker, this will compress and delete logs every 7 days #################\n\n"
