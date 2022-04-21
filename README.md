@@ -38,10 +38,6 @@ Contents:
   Step 3:
   
     ./install_node.sh
-    
- Step 4:
-  
-    ./install_EI.sh
           
     
    #This does not include any changings to your Firewall you may need to apply in order for the node to run correctly. 
