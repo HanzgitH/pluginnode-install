@@ -187,8 +187,7 @@ echo -e "Waiting for Node to come up... (10 Seconds)"
 sleep 10
 echo
 echo -e "\n\n################# Installing External Initiators #################\n\n"
-
-sudo docker exec --env-file /opt/docker/goplugin/plugin-deployment/ei.env -it plinode /bin/bash -c ". ~/.profile && pm2 start /pluginAdm/startEI.sh"
+sleep 15
 
 sudo docker exec -it plinode /bin/bash -c ". ~/.profile && plugin admin login -f /pluginAdm/.env.apicred"
 
@@ -200,14 +199,17 @@ ICSECRET=$(echo $JOBKEYS | sed 's/\ //g' | awk -F"║" '{print $5};')
 CIACCESSKEY=$(echo $JOBKEYS | sed 's/\ //g' | awk -F"║" '{print $6};')
 CISECRET=$(echo $JOBKEYS | sed 's/\ //g' | awk -F"║" '{print $7};')
 
-sudo sed -i "s|"cc763c8ca9fe48508883f6d39f818ccf"|$ICACCESSKEY|g" /opt/docker/goplugin/plugin-deployment/ei.env
-sudo sed -i "s|"jEG8wzejfexfjAeZWBy8SzS7XV+SfV22j0eq7CEnyc6SSsd35PtQlESP2RhYs1am"|$ICSECRET|g" /opt/docker/goplugin/plugin-deployment/ei.env
-sudo sed -i "s|"pKgKE+XNYbU2FRX207LObetsCx56bGPXenU3XpUelAdRb73bXBE22tSLjPviRUav"|$CIACCESSKEY|g" /opt/docker/goplugin/plugin-deployment/ei.env
-sudo sed -i "s|"FXllNVlkD8ADVjFr46teIGRaeWEZXsYVQRMdfmu+UmRV4aysZ30E/OkNadysLZsA"|$CISECRET|g" /opt/docker/goplugin/plugin-deployment/ei.env
+sudo sed -i "s|"cc763c8ca9fe48508883f6d39f818ccf"|$ICACCESSKEY|g" ei.env
+sudo sed -i "s|"jEG8wzejfexfjAeZWBy8SzS7XV+SfV22j0eq7CEnyc6SSsd35PtQlESP2RhYs1am"|$ICSECRET|g" ei.env
+sudo sed -i "s|"pKgKE+XNYbU2FRX207LObetsCx56bGPXenU3XpUelAdRb73bXBE22tSLjPviRUav"|$CIACCESSKEY|g" ei.env
+sudo sed -i "s|"FXllNVlkD8ADVjFr46teIGRaeWEZXsYVQRMdfmu+UmRV4aysZ30E/OkNadysLZsA"|$CISECRET|g" ei.env
 
-sudo docker exec --env-file /opt/docker/goplugin/plugin-deployment/ei.env -it plinode /bin/bash -c ". ~/.profile && pm2 restart /pluginAdm/startEI.sh"
+sudo docker exec --env-file ei.env -it plinode /bin/bash -c ". ~/.profile && pm2 start /pluginAdm/startEI.sh"
+
 
 echo -e "\n\n################# Adding logrotate to docker, this will compress and delete logs every 7 days #################\n\n"
+
+sleep 5
 
 sudo docker exec -it plinode /bin/bash -c "apt-get install logrotate -y" &&
 sudo docker cp /root/pluginnode-install/pm2logs plinode:/etc/logrotate.d/pm2logs &&
