@@ -28,11 +28,11 @@ Contents:
 
   ##install_docker.sh
 
-    This is a small Script that installs docker for you.
+  - This is a small Script that installs docker for you.
   
   ##install_node.sh
   
-    This is the main Install Script that will install the plugin Node including the external initiator.
+  - This is the main Install Script that will install the plugin Node including the external initiator.
       
     
   Step 1:
