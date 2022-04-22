@@ -186,6 +186,8 @@ until docker container exec -it psql_ei pg_isready; do
 sleep 5
 done
 
+sleep 3
+
 echo -e "\n\n################# Starting Node #################\n\n"
 
 sudo docker exec -it plinode /bin/bash -c ". ~/.profile && pm2 start /pluginAdm/startNode.sh"
@@ -195,9 +197,9 @@ echo -e "Waiting for Node to come up... (15 Seconds)"
 sleep 15
 
 echo
-echo -e "\n\n################# Installing External Initiators (20 seconds) #################\n\n"
+echo -e "\n\n################# Installing External Initiators (10 seconds) #################\n\n"
 
-sleep 20
+sleep 10
 
 sudo docker exec -it plinode /bin/bash -c ". ~/.profile && plugin admin login -f /pluginAdm/.env.apicred"
 
