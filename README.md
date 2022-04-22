@@ -32,7 +32,7 @@ Contents:
   
   ##install_node.sh
   
-  - This is the main Install Script that will install the plugin Node including the external initiator.
+  - This is the main Install Script that will install the plugin Node including the external initiator and all functions mentioned in the README.
       
     
   Step 1:
