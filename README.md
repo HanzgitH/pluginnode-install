@@ -16,7 +16,7 @@
     - logrotate
 
 #Credit mentions:
- - nmzn - Creator of orginal docker install fork.
+ - nmzn - Creator of orginal docker install.
 
 # Please take note that the "./install_node.sh" does not include the docker installation. If you have no Docker installed on your VPS you need to run the "./install_docker.sh" first
 
