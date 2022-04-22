@@ -18,7 +18,9 @@
 #Credit mentions:
  - nmzn - Creator of orginal docker install.
 
-# Please take note that the "./install_node.sh" does not include the docker installation. If you have no Docker installed on your VPS you need to run the "./install_docker.sh" first
+# Please take note:
+- "./install_node.sh" does not include the docker installation. If you have no Docker installed on your VPS you need to first run:
+-  "./install_docker.sh"
 
 Guide on how to deploy Contracts: https://github.com/nmzn/deployment-guide
 
