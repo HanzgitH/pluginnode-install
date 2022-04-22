@@ -16,7 +16,7 @@
     - logrotate
 
 #Credit mentions:
- - nmzn - Creator of orginal docker install.
+ - nmzn - Creator of orginal auto docker install.
 
 # Please take note:
 - "./install_node.sh" does not include the docker installation. If you have no Docker installed on your VPS you need to first run:
