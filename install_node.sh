@@ -4,7 +4,7 @@ echo -e "\n\n## Plugin Docker Install -- https://goplugin.co -- created by nmzn 
 echo -e "\n\n## Please make sure to read the readme.md after installing!!!"
 echo -e "## Version 0.3 \n\n"
 
-Sleep 3
+sleep 3
 
 echo
 echo -e "\n\n################# Updating System #################\n\n"
