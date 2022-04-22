@@ -1,14 +1,22 @@
 # pluginnode-install
 
-#This is a work around until the new docker install is released by the team.
+# This is a autoinstall of the goplugin $PLI decentralised oracle node.
 
 #Must be installed in /root directory.
 
-#autoreboot and logrotate added, also sleep time added, this was to allow the job creation to take place, so the echo has time to capture the information.
+#This install covers:
+  - golang
+  - Docker
+  - Postgresql db
+  - Node
+  - External initiator
+  - Functions:
+    - autoreboot
+    - password prompt
+    - logrotate
 
-#New startEI.sh added, this fixes the RPC syntax error located in startEI.sh, which caused the external initiator to error.
-
-#Credit goes to nmzn who created the majority of this install.
+#Credit mentions:
+ - nmzn - Creator of orginal docker install fork.
 
 # Please take note that the "./install_node.sh" does not include the docker installation. If you have no Docker installed on your VPS you need to run the "./install_docker.sh" first
 
