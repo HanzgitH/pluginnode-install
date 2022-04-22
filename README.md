@@ -26,13 +26,13 @@ Guide on how to deploy Contracts: https://github.com/nmzn/deployment-guide
 
 Contents:
 
-  ##install_docker.sh
+  - "./install_docker.sh"
 
-  - This is a small Script that installs docker for you.
+    - This is a small Script that installs docker for you.
   
-  ##install_node.sh
+  - "./install_node.sh"
   
-  - This is the main Install Script that will install the plugin Node including the external initiator and all functions mentioned in the README.
+    - This is the main Install Script that will install the plugin Node including the external initiator and all functions mentioned in the README.
       
     
   Step 1:
