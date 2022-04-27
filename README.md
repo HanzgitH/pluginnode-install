@@ -56,3 +56,16 @@ Contents:
    
    Keep in mind that you still have to do the Oracle Contract deployment part wich you find here: https://docs.goplugin.co
    
+
+
+Disclaimer:
+
+This install is to assist and autosetup of the $PLI node, it is essential that each user is aware of maintenance of each node as well as securing a VPS.
+
+Securing VPS is not included in this guide.
+
+I use this as my personal install of $PLI nodes and is free to share and use at each individual's discression, I take no personal responsibility for the use, distribution and implementation of this install.
+
+#NodeLife 
+
+Hanz @DeFi_Jon
