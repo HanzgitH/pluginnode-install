@@ -33,6 +33,10 @@ Contents:
   - "./install_node.sh"
   
     - This is the main Install Script that will install the plugin Node including the external initiator and all functions mentioned in the README.
+
+  - "./install_node_apothem.sh"
+
+    - This is the apothem testnet setup for a node, use for development and general testing that is on the apothem network.
       
     
   Step 1:
@@ -45,18 +49,20 @@ Contents:
       
     ./install_docker.sh
   
-  Step 3:
+  Step 3a:
   
     ./install_node.sh
-          
     
-   #This does not include any changings to your Firewall you may need to apply in order for the node to run correctly. 
+  Step 3b (only use if you wish to install a test node on apothem test network)
+          
+    ./install_node_apothem.sh   
+    
     
    #Important
    
    Keep in mind that you still have to do the Oracle Contract deployment part wich you find here: https://docs.goplugin.co
    
-
+   #This does not include any changings to your Firewall you may need to apply in order for the node to run correctly.
 
 Disclaimer:
 
