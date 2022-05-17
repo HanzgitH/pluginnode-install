@@ -42,7 +42,7 @@ Contents:
   Step 1:
       
           
-    sudo git clone https://github.com/HanzgitH/pluginnode-install.git && cd pluginnode-install && sudo chmod +x install_docker.sh && sudo chmod +x install_node.sh
+    sudo git clone https://github.com/HanzgitH/pluginnode-install.git && cd pluginnode-install && sudo chmod +x install_docker.sh && sudo chmod +x install_node.sh && sudo chmod +x install_node_apothem.sh
       
   
   Step 2 (optional if needed):
@@ -62,7 +62,7 @@ Contents:
    
    Keep in mind that you still have to do the Oracle Contract deployment part wich you find here: https://docs.goplugin.co
    
-   #This does not include any changings to your Firewall you may need to apply in order for the node to run correctly.
+   This install does not include any changings to your Firewall you may need to apply in order for the node to run correctly.
 
 Disclaimer:
 
