@@ -15,19 +15,19 @@ sudo apt update && sudo apt upgrade -y
 echo
 echo -e "\n\n################# Installing golang #################\n\n"
 
-sudo apt-get install golang -y && sudo apt update
+sudo apt-get install golang -y && sudo apt update && sleep 5
 
 echo -e "\n\n################# Changing Directory #################\n\n"
 
 sudo mkdir -p /opt/docker/goplugin
 cd /opt/docker/goplugin
 
-echo -e "\n\n################# getting git repositories #################\n\n"
+echo -e "\n\n################# Getting git repositories #################\n\n"
 
 sudo git clone -b docker_branch_v1 https://github.com/GoPlugin/plugin-deployment.git && cd plugin-deployment/
 sudo git clone https://github.com/nmzn/pluginnode-docker.git && cd pluginnode-docker && sudo cp docker-compose.yaml /opt/docker/goplugin/plugin-deployment && cd ..
 
-echo -e "\n\n################# installing latest docker compose #################\n\n"
+echo -e "\n\n################# Installing latest docker compose #################\n\n"
 
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
