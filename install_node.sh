@@ -205,7 +205,6 @@ echo -e "\n\n################# Installing External Initiators (10 seconds) #####
 sleep 10
 
 sudo docker exec -it plinode /bin/bash -c ". ~/.profile && plugin admin login -f /pluginAdm/.env.apicred" &&
-
 JOBKEYS=$(sudo docker exec -it plinode /bin/bash -c ". ~/.profile && plugin initiators create pluginei http://localhost:8080/jobs" | grep pluginei) &&
 sudo sh -c "echo $JOBKEYS > eivar.env"
 
@@ -229,7 +228,6 @@ sleep 5
 sudo docker exec -it plinode /bin/bash -c "apt-get install logrotate -y" &&
 sudo docker cp /root/pluginnode-install/pm2logs plinode:/etc/logrotate.d/pm2logs &&
 sudo docker cp /root/pluginnode-install/log.jsonl plinode:/etc/logrotate.d/log.jsonl &&
-
 echo -e "\n\n################# Creating service for automatic startup after reboot #################\n\n"
 
 cp /root/pluginnode-install/nodeboot.sh /usr/local/sbin/
@@ -240,7 +238,7 @@ systemctl enable nodeboot.service
 systemctl daemon-reload
 
 
-echo -e "\n\n################# Done #################\n\n"
+echo -e "\n\n################ Done ################\n\n"
 
 echo -e "\n\n################# Node Setup completed. Oracle Deployment Part has to be done manually. Please see: https://docs.goplugin.co for further information #################\n\n"
 
