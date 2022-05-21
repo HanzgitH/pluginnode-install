@@ -1,0 +1,43 @@
+services: 
+   plinode: 
+     container_name: plinode 
+     image: goplugin/pluginode:v2 
+     restart: unless-stopped 
+     stdin_open: true # docker run -i 
+     tty: true        # docker run -t 
+     depends_on: 
+       - "postgres-server-node" 
+       - "postgres-server-ei" 
+     extra_hosts: 
+       - "host:192.168.0.1" 
+     ports: 
+       - "6688:6688" 
+       - "8080:8080" 
+     volumes: 
+       - /opt/docker/goplugin/plugin-deployment:/pluginAdm 
+     env_file: 
+       - /opt/docker/goplugin/plugin-deployment/plugin.env 
+  
+   postgres-server-node: 
+     container_name: psql_node 
+     image: postgres:12-alpine 
+     restart: unless-stopped 
+     environment:   # Username, password and database name variables 
+       POSTGRES_USER: dbuser 
+       POSTGRES_PASSWORD: plugin1234 
+       POSTGRES_DB: plugin_mainnet_db 
+       PG_DATA: /var/lib/postgresql/data/pgdata #data storage 
+     volumes: 
+       - ./data_psql_node:/var/lib/postgresql/data 
+  
+   postgres-server-ei: 
+     container_name: psql_ei 
+     image: postgres:12-alpine 
+     restart: unless-stopped 
+     environment:   # Username, password and database name variables 
+       POSTGRES_USER: dbuser 
+       POSTGRES_PASSWORD: plugin1234 
+       POSTGRES_DB: plugin_mainnet_ei 
+       PG_DATA: /var/lib/postgresql/data/pgdata #data storage 
+     volumes: 
+       - ./data_psql_ei:/var/lib/postgresql/data
