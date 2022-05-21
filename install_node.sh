@@ -180,7 +180,7 @@ echo -e "Done..."
 
 echo -e "\n\n################# Bringing up node & database #################\n\n"
 
-sudo docker-compose up -d &&
+sudo docker-compose up -d && sleep 5
 
 echo -e "\n\n################# Awaiting connection for pgsql db #################\n\n"
 
@@ -219,7 +219,6 @@ sudo sed -i "s|"pKgKE+XNYbU2FRX207LObetsCx56bGPXenU3XpUelAdRb73bXBE22tSLjPviRUav
 sudo sed -i "s|"FXllNVlkD8ADVjFr46teIGRaeWEZXsYVQRMdfmu+UmRV4aysZ30E/OkNadysLZsA"|$CISECRET|g" ei.env
 
 sudo docker exec --env-file ei.env -it plinode /bin/bash -c ". ~/.profile && pm2 start /pluginAdm/startEI.sh"
-
 
 echo -e "\n\n################# Adding logrotate to docker, this will compress and delete logs every 7 days #################\n\n"
 
