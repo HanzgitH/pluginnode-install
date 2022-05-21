@@ -238,10 +238,10 @@ systemctl daemon-reload
 
 echo -e "\n\n################ Creating bashscript shortcuts for status and logs ################\n\n"
 
-sudo chmod u+x /opt/docker/goplugin/plugin-deployment/status.sh
-sudo cp /opt/docker/goplugin/plugin-deployment/status.sh usr/local/bin/
-sudo chmod u+x /opt/docker/goplugin/plugin-deployment/logs.sh
-sudo cp /opt/docker/goplugin/plugin-deployment/logs.sh usr/local/bin/
+sudo chmod u+x /root/pluginnode-install/status.sh
+sudo cp /root/pluginnode-install/status.sh usr/local/bin/
+sudo chmod u+x /root/pluginnode-install/logs.sh
+sudo cp /root/pluginnode-install/logs.sh usr/local/bin/
 
 
 echo -e "\n\n################# Node Setup completed. Oracle Deployment Part has to be done manually. Please see: https://docs.goplugin.co for further information #################\n\n"
