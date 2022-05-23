@@ -12,6 +12,8 @@ echo -e "\n\n################# Updating System #################\n\n"
 cd
 sudo apt update && sudo apt upgrade -y
 
+wait
+
 echo
 echo -e "\n\n################# Installing golang #################\n\n"
 
@@ -180,7 +182,7 @@ echo -e "Done..."
 
 echo -e "\n\n################# Bringing up node & database #################\n\n"
 
-sudo docker-compose up -d && sleep 5
+sudo docker-compose up -d && sleep 10
 
 echo -e "\n\n################# Awaiting connection for pgsql db #################\n\n"
 
@@ -189,7 +191,7 @@ until docker container exec -it psql_ei pg_isready; do
 sleep 5
 done
 
-sleep 3
+wait
 
 echo -e "\n\n################# Starting Node #################\n\n"
 
