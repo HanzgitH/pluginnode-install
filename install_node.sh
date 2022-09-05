@@ -180,6 +180,11 @@ sudo sed -i "s/keystore/$kstpw/g" .env.password
 echo
 echo -e "Done..."
 
+echo -e "\n\n############ Updating RPC and WS information  ##########\n\n" && sleep 5
+sudo sed -i -e "s/plirpc.blocksscan.io/pli.xdcrpc.com/g" /opt/docker/goplugin/plugin-deployment/startEI.sh
+sudo sed -i -e "s/pluginws.blocksscan.io/pli.xdcrpc.com/ws/g" /opt/docker/goplugin/plugin-deployment/plugin.env
+wait
+
 echo -e "\n\n################# Bringing up node & database #################\n\n"
 
 sudo docker-compose up -d && sleep 10
@@ -190,8 +195,6 @@ until docker container exec -it psql_ei pg_isready; do
     >&2 echo "Postgres is starting, awating connection please wait"
 sleep 5
 done
-
-wait
 
 echo -e "\n\n################# Starting Node #################\n\n"
 
