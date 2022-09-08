@@ -196,9 +196,11 @@ sudo mkdir -p /opt/docker/goplugin/plugin-deployment/tls && cd /opt/docker/goplu
 openssl req -x509 -out  server.crt  -keyout server.key \
   -newkey rsa:2048 -nodes -sha256 -days 365 \
   -subj '/CN=localhost' -extensions EXT -config <( \
-   printf "[dn]\nCN=localhost\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:localhost\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth") && sleep 5
+   printf "[dn]\nCN=localhost\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:localhost\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth") && wait
 
-cd /opt/docker/goplugin/plugin-deployment 
+sleep 10
+
+cd /opt/docker/goplugin/plugin-deployment && sleep 1
 
 echo "TLS_CERT_PATH=/Plugin/server.crt
 TLS_KEY_PATH=/Plugin/server.key" >> ei.env
