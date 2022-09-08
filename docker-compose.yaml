@@ -1,22 +1,25 @@
-services: 
-   plinode: 
-     container_name: plinode 
-     image: goplugin/pluginode:v2 
-     restart: unless-stopped 
-     stdin_open: true # docker run -i 
-     tty: true        # docker run -t 
-     depends_on: 
-       - "postgres-server-node" 
-       - "postgres-server-ei" 
-     extra_hosts: 
-       - "host:192.168.0.1" 
-     ports: 
-       - "6688:6688" 
-       - "8080:8080" 
-     volumes: 
-       - /opt/docker/goplugin/plugin-deployment:/pluginAdm 
-     env_file: 
-       - /opt/docker/goplugin/plugin-deployment/plugin.env 
+services:
+  plinode:
+    container_name: plinode
+    image: goplugin/pluginode:v2
+    restart: unless-stopped
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    depends_on:
+      - "postgres-server-node"
+      - "postgres-server-ei"
+    extra_hosts:
+      - "host:192.168.0.1"
+    ports:
+      - "6689:6689"
+      - "6688:6688"
+      - "8080:8080"
+    volumes:
+      - /opt/docker/goplugin/plugin-deployment:/pluginAdm
+      - /opt/docker/goplugin/plugin-deployment/external-adapters:/external-adapters
+      - /opt/docker/goplugin/plugin-deployment/tls:/Plugin
+    env_file:
+      - /opt/docker/goplugin/plugin-deployment/plugin.env
   
    postgres-server-node: 
      container_name: psql_node 
