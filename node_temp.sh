@@ -183,19 +183,21 @@ echo -e "Done..."
 echo -e "\n\n############ Updating RPC and WS information  ##########\n\n" && sleep 5
 sudo sed -i -e "s/plirpc.blocksscan.io/pli.xdcrpc.com/g" /opt/docker/goplugin/plugin-deployment/startEI.sh
 sudo sed -i -e "s/pluginws.blocksscan.io/pli.xdcrpc.com\/ws/g" /opt/docker/goplugin/plugin-deployment/plugin.env
-sed -i -e '/PLUGIN_TLS_PORT=0/d' /opt/docker/goplugin/plugin-deployment/plugin.env
-code": "sed -i -e '/SECURE_COOKIES=false/d' /opt/docker/goplugin/plugin-deployment/plugin.env
+sudo sed -i -e "/PLUGIN_TLS_PORT=0/d" /opt/docker/goplugin/plugin-deployment/plugin.env
+sudo sed -i -e "/SECURE_COOKIES=false/d" /opt/docker/goplugin/plugin-deployment/plugin.env
 
 echo -e "\n\n################# Making directory for tls and creating .crt files #################\n\n"
 
-sudo mkdir -p /opt/docker/goplugin/plugin-deployment/tls && cd /opt/docker/goplugin/plugin-deployment/tls && sleep 1
+sudo mkdir -p /opt/docker/goplugin/plugin-deployment/tls && cd /opt/docker/goplugin/plugin-deployment/tls &&
 
 openssl req -x509 -out  server.crt  -keyout server.key \
   -newkey rsa:2048 -nodes -sha256 -days 365 \
   -subj '/CN=localhost' -extensions EXT -config <( \
    printf "[dn]\nCN=localhost\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:localhost\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth")
-   
-cd /opt/docker/goplugin/plugin-deployment
+
+nguished_name = dn\n[EXT]\nsubjectAltName=DNS:localhost\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth") && sleep 10
+
+cd /opt/docker/goplugin/plugin-deployment 
 
 echo "TLS_CERT_PATH=/Plugin/tls/server.crt
 TLS_KEY_PATH=/Plugin/tls/server.key" >> ei.env
