@@ -19,6 +19,9 @@ echo -e "\n\n################# Installing golang #################\n\n"
 
 sudo apt-get install golang -y && sudo apt update && sleep 5
 
+echo -e "\n\n################# Adding external-adapter folder #################\n\n"
+
+sudo mkdir -p /opt/docker/goplugin/plugin-deployment/external-adapters &&
 echo -e "\n\n################# Changing Directory #################\n\n"
 
 sudo mkdir -p /opt/docker/goplugin
@@ -188,23 +191,17 @@ sudo sed -i -e "/SECURE_COOKIES=false/d" /opt/docker/goplugin/plugin-deployment/
 
 echo -e "\n\n################# Making directory for tls and creating .crt files #################\n\n"
 
-sudo mkdir -p /opt/docker/goplugin/plugin-deployment/tls && cd /opt/docker/goplugin/plugin-deployment/tls &&
+sudo mkdir -p /opt/docker/goplugin/plugin-deployment/tls && cd /opt/docker/goplugin/plugin-deployment/tls && sleep 5
 
 openssl req -x509 -out  server.crt  -keyout server.key \
   -newkey rsa:2048 -nodes -sha256 -days 365 \
   -subj '/CN=localhost' -extensions EXT -config <( \
-   printf "[dn]\nCN=localhost\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:localhost\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth")
-
-nguished_name = dn\n[EXT]\nsubjectAltName=DNS:localhost\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth") && sleep 10
+   printf "[dn]\nCN=localhost\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:localhost\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth") && sleep 5
 
 cd /opt/docker/goplugin/plugin-deployment 
 
-echo "TLS_CERT_PATH=/Plugin/tls/server.crt
-TLS_KEY_PATH=/Plugin/tls/server.key" >> ei.env
-
-echo -e "\n\n################# Adding external-adapter folder #################\n\n"
-
-mkdir /opt/docker/goplugin/plugin-deployment/external-adapters && sleep 5
+echo "TLS_CERT_PATH=/Plugin/server.crt
+TLS_KEY_PATH=/Plugin/server.key" >> ei.env
 
 echo -e "\n\n################# Bringing up node  #################\n\n"
 
