@@ -27,7 +27,7 @@ cd /opt/docker/goplugin
 echo -e "\n\n################# Getting git repositories #################\n\n"
 
 sudo git clone -b docker_branch_v1 https://github.com/GoPlugin/plugin-deployment.git && cd plugin-deployment/
-sudo git clone https://github.com/HanzgitH/pluginnode-install.git cd /blob/main && sudo cp docker-compose.yaml /opt/docker/goplugin/plugin-deployment && cd ..
+sudo git clone https://github.com/HanzgitH/pluginnode-install.git && cd plugin-deployment && sudo cp docker-compose.yaml /opt/docker/goplugin/plugin-deployment && cd ..
 
 echo -e "\n\n################# Installing latest docker compose #################\n\n"
 
