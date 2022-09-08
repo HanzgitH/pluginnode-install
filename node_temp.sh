@@ -19,9 +19,6 @@ echo -e "\n\n################# Installing golang #################\n\n"
 
 sudo apt-get install golang -y && sudo apt update && sleep 5
 
-echo -e "\n\n################# Adding external-adapter folder #################\n\n"
-
-sudo mkdir -p /opt/docker/goplugin/plugin-deployment/external-adapters &&
 echo -e "\n\n################# Changing Directory #################\n\n"
 
 sudo mkdir -p /opt/docker/goplugin
@@ -200,7 +197,9 @@ openssl req -x509 -out  server.crt  -keyout server.key \
 
 sleep 10
 
-cd /opt/docker/goplugin/plugin-deployment && sleep 1
+echo -e "\n\n################# Adding external-adapter folder #################\n\n"
+
+cd /opt/docker/goplugin/plugin-deployment && sudo mkdir -p external-adapters && sleep 1
 
 echo "TLS_CERT_PATH=/Plugin/server.crt
 TLS_KEY_PATH=/Plugin/server.key" >> ei.env
