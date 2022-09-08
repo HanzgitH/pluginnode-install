@@ -20,14 +20,14 @@ services:
     env_file:
       - /opt/docker/goplugin/plugin-deployment/plugin.env
   
-   postgres-server-node: 
-     container_name: psql_node 
-     image: postgres:12-alpine 
-     restart: unless-stopped 
-     environment:   # Username, password and database name variables 
-       POSTGRES_USER: dbuser 
-       POSTGRES_PASSWORD: plugin1234 
-       POSTGRES_DB: plugin_mainnet_db 
-       PG_DATA: /var/lib/postgresql/data/pgdata #data storage 
-     volumes: 
-       - ./data_psql_node:/var/lib/postgresql/data 
+  postgres-server-node: 
+    container_name: psql_node 
+    image: postgres:12-alpine 
+    restart: unless-stopped 
+    environment:   # Username, password and database name variables 
+      POSTGRES_USER: dbuser 
+      POSTGRES_PASSWORD: plugin1234 
+      POSTGRES_DB: plugin_mainnet_db 
+      PG_DATA: /var/lib/postgresql/data/pgdata #data storage 
+    volumes: 
+      - ./data_psql_node:/var/lib/postgresql/data 
