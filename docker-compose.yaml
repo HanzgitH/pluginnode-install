@@ -30,4 +30,4 @@ services:
       POSTGRES_DB: plugin_mainnet_db 
       PG_DATA: /var/lib/postgresql/data/pgdata #data storage 
     volumes: 
-      - ./data_psql_node:/var/lib/postgresql/data 
+      - ./data_psql_node:/var/lib/postgresql/data
