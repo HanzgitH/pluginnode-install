@@ -14,6 +14,7 @@
     - autoreboot
     - password prompt
     - logrotate
+    - https
 
 #Credit mentions:
  - nmzn - Creator of orginal auto docker install.
