@@ -9,7 +9,6 @@ sleep 3
 echo
 echo -e "\n\n################# Updating System #################\n\n"
 
-cd
 sudo apt update && sudo apt upgrade -y 
 
 wait
