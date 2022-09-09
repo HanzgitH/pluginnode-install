@@ -10,7 +10,7 @@ echo
 echo -e "\n\n################# Updating System #################\n\n"
 
 cd
-sudo apt update && sudo apt upgrade -y
+sudo apt update && sudo apt upgrade -y 
 
 wait
 
@@ -24,11 +24,11 @@ echo -e "\n\n################# Changing Directory #################\n\n"
 sudo mkdir -p /opt/docker/goplugin
 cd /opt/docker/goplugin
 
-echo -e "\n\n################# Getting git repositories #################\n\n"
+echo -e "\n\n################# Getting git repositories #################\n\n" && sleep 1
 
-sudo git clone -b docker_branch_v1 https://github.com/GoPlugin/plugin-deployment.git && cd plugin-deployment/ && wait
+sudo git clone -b docker_branch_v1 https://github.com/GoPlugin/plugin-deployment.git && cd plugin-deployment/
 
-sudo cp /root/pluginnode-install/docker-compose.yaml /opt/docker/goplugin/plugin-deployment && sleep 5
+cp /root/pluginnode-install/docker-compose.yaml /opt/docker/goplugin/plugin-deployment 
 
 echo -e "\n\n################# Installing latest docker compose #################\n\n"
 
