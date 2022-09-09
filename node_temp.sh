@@ -202,7 +202,7 @@ echo -e "\n\n################# Adding external-adapter folder #################\
 cd /opt/docker/goplugin/plugin-deployment && sudo mkdir -p external-adapters && sleep 1
 
 echo "TLS_CERT_PATH=/Plugin/server.crt
-TLS_KEY_PATH=/Plugin/server.key" >> ei.env
+TLS_KEY_PATH=/Plugin/server.key" >> plugin.env
 
 echo -e "\n\n################# Bringing up node  #################\n\n"
 
