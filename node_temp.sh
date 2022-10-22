@@ -181,8 +181,8 @@ echo
 echo -e "Done..."
 
 echo -e "\n\n############ Updating RPC and WS information  ##########\n\n" && sleep 5
-sudo sed -i -e "s/plirpc.blocksscan.io/pli.xdcrpc.com/g" /opt/docker/goplugin/plugin-deployment/startEI.sh
-sudo sed -i -e "s/pluginws.blocksscan.io/pli.xdcrpc.com\/ws/g" /opt/docker/goplugin/plugin-deployment/plugin.env
+sudo sed -i -e "s/plirpc.blocksscan.io/plixdcrpc.icotokens.net/g" /opt/docker/goplugin/plugin-deployment/startEI.sh
+sudo sed -i -e "s/pluginws.blocksscan.io/plixdcwss.icotokens.net/g" /opt/docker/goplugin/plugin-deployment/plugin.env
 sudo sed -i -e "/PLUGIN_TLS_PORT=0/d" /opt/docker/goplugin/plugin-deployment/plugin.env
 sudo sed -i -e "/SECURE_COOKIES=false/d" /opt/docker/goplugin/plugin-deployment/plugin.env
 
