@@ -42,3 +42,6 @@ services:
       POSTGRES_PASSWORD: gDHa4hwjdn12
       POSTGRES_DB: plugin_mainnet_ei
       PG_DATA: /var/lib/postgresql/data/pgdata #data storage
+    volumes:
+      - ./data_psql_ei:/var/lib/postgresql/data
+      
