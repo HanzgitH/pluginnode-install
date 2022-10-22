@@ -27,7 +27,7 @@ echo -e "\n\n################# Getting git repositories #################\n\n" &
 
 sudo git clone -b docker_branch_v1 https://github.com/GoPlugin/plugin-deployment.git && cd plugin-deployment/
 
-cp /root/pluginnode-install/docker-compose.yaml /opt/docker/goplugin/plugin-deployment 
+cp /home/pluginnode-install/docker-compose.yaml /opt/docker/goplugin/plugin-deployment 
 
 echo -e "\n\n################# Installing latest docker compose #################\n\n"
 
@@ -249,13 +249,13 @@ echo -e "\n\n################# Adding logrotate to docker, this will compress an
 sleep 5
 
 sudo docker exec -it plinode /bin/bash -c "apt-get install logrotate -y" &&
-sudo docker cp /root/pluginnode-install/pm2logs plinode:/etc/logrotate.d/pm2logs &&
-sudo docker cp /root/pluginnode-install/log.jsonl plinode:/etc/er.d/log.jsonl &&
+sudo docker cp /home/pluginnode-install/pm2logs plinode:/etc/logrotate.d/pm2logs &&
+sudo docker cp /home/pluginnode-install/log.jsonl plinode:/etc/er.d/log.jsonl &&
 echo -e "\n\n################# Creating service for automatic startup after reboot #################\n\n"
 
-cp /root/pluginnode-install/nodeboot.sh /usr/local/sbin/
+cp /home/pluginnode-install/nodeboot.sh /usr/local/sbin/
 chmod +x /usr/local/sbin/nodeboot.sh
-cp /root/pluginnode-install/nodeboot.service /etc/systemd/system/nodeboot.service
+cp /home/pluginnode-install/nodeboot.service /etc/systemd/system/nodeboot.service
 chmod +x /etc/systemd/system/nodeboot.service
 systemctl enable nodeboot.service
 systemctl daemon-reload
@@ -263,4 +263,6 @@ systemctl daemon-reload
 
 echo -e "\n\n################# Node Setup completed. Oracle Deployment Part has to be done manually. Please see: https://docs.goplugin.co for further information #################\n\n"
 
-echo -e "\n\n################# All docker files are saved in /opt/docker/goplugin/plugin-deployment to check status run status.sh for logs run logs.sh #################\n\n"e
+echo -e "\n\n################# All docker files are saved in /opt/docker/goplugin/plugin-deployment #################\n\n"
+
+echo -e "\n\n################# Use https://IP:6689 to login node dashboard #################\n\n"
