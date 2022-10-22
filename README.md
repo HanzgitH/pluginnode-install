@@ -2,7 +2,7 @@
 
 # This is a autoinstall of the goplugin $PLI decentralised oracle node.
 
-#Must be installed in /root directory.
+#Must be installed in `/home` directory.
 
 #This install covers:
   - golang
@@ -39,6 +39,9 @@ Contents:
 
     - This is the apothem testnet setup for a node, use for development and general testing that is on the apothem network.
       
+Before installation please install git:
+
+  `sudo apt-get install git`
     
   Step 1:
       
@@ -50,7 +53,7 @@ Contents:
       
     ./install_docker.sh
   
-  Step 3a:
+  Step 3a, this will install the node, the update will need to be run once the node installation is complete.
   
     ./install_node.sh
     
@@ -64,6 +67,12 @@ Contents:
    Keep in mind that you still have to do the Oracle Contract deployment part wich you find here: https://docs.goplugin.co
    
    This install does not include any changings to your Firewall you may need to apply in order for the node to run correctly.
+
+Testing:
+
+The new updated node included TLS and updated RPC is currently under testing, feel free to test this, this replaces 3a.
+    
+    ./node_temp.sh
 
 Disclaimer:
 
