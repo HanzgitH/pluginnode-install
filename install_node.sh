@@ -181,7 +181,7 @@ echo
 echo -e "Done..."
 
 echo -e "\n\n############ Updating RPC and WS information  ##########\n\n" && sleep 5
-sudo sed -i -e "s/plirpc.blocksscan.io/https://pliws.xdcrpc.com\/g" /opt/docker/goplugin/plugin-deployment/startEI.sh
+sudo sed -i -e "s/plirpc.blocksscan.io/pliws.xdcrpc.com\/g" /opt/docker/goplugin/plugin-deployment/startEI.sh
 sudo sed -i -e "s/pluginws.blocksscan.io/pliws1.xdcrpc.com\/g" /opt/docker/goplugin/plugin-deployment/plugin.env
 wait
 
