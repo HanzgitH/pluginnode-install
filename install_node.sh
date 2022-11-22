@@ -152,12 +152,12 @@ echo
 
 echo -e "\nSetting Postgres Password"
 
-sudo sed -i "s/plugin1234/$pgrspw/g"  plugin.env ei.env
-sudo sed -i "s/plugin1234/$pgrspw/g"  docker-compose.yaml
-sudo sed -i "s/\postgres\b/dbuser/g" plugin.env
-sudo sed -i "s/\postgres\b/dbuser/g" ei.env
-sudo sed -i "s|"172.17.0.1"|psql_node|g" plugin.env
-sudo sed -i "s|"172.17.0.1"|psql_ei|g" ei.env
+sudo sed -i "s/plugin1234/$pgrspw/g"  /opt/docker/goplugin/plugin-deployment/plugin.env /opt/docker/goplugin/plugin-deployment/ei.env
+sudo sed -i "s/plugin1234/$pgrspw/g"  /opt/docker/goplugin/plugin-deployment/docker-compose.yaml
+sudo sed -i "s/\postgres\b/dbuser/g" /opt/docker/goplugin/plugin-deployment/plugin.env
+sudo sed -i "s/\postgres\b/dbuser/g" /opt/docker/goplugin/plugin-deployment/ei.env
+sudo sed -i "s|"172.17.0.1"|psql_node|g" /opt/docker/goplugin/plugin-deployment/plugin.env
+sudo sed -i "s|"172.17.0.1"|psql_ei|g" /opt/docker/goplugin/plugin-deployment/ei.env
 
 echo
 echo -e "Done..."
