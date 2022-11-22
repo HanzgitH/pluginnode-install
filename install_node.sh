@@ -241,13 +241,6 @@ chmod +x /etc/systemd/system/nodeboot.service
 systemctl enable nodeboot.service
 systemctl daemon-reload
 
-echo -e "\n\n################ Creating bashscript shortcuts for status and logs ################\n\n"
-
-cp /root/pluginnode-install/status.sh usr/local/sbin/
-chmod u+x usr/local/sbin/status.sh
-cp /root/pluginnode-install/logs.sh usr/local/sbin/
-chmod u+x usr/local/sbin/logs.sh
-
 echo -e "\n\n################# Node Setup completed. Oracle Deployment Part has to be done manually. Please see: https://docs.goplugin.co for further information #################\n\n"
 
 echo -e "\n\n################# All docker files are saved in /opt/docker/goplugin/plugin-deployment to check status run status.sh for logs run logs.sh #################\n\n"
