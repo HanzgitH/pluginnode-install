@@ -25,7 +25,7 @@ cd /opt/docker/goplugin
 
 echo -e "\n\n################# Getting git repositories #################\n\n" && sleep 1
 
-sudo git clone -b docker_branch_v1 https://github.com/GoPlugin/plugin-deployment.git && cd plugin-deployment/
+sudo git clone -b docker_branch_v1 https://github.com/GoPlugin/plugin-deployment.git && cd plugin-deployment/ && sleep 10
 
 cp /root/pluginnode-install/docker-compose.yaml /opt/docker/goplugin/plugin-deployment && sleep 5
 
