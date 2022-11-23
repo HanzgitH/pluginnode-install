@@ -2,7 +2,7 @@
 
 # This is a autoinstall of the goplugin $PLI decentralised oracle node.
 
-#Must be installed in `/home` directory.
+#Must be installed in `/root directory.
 
 #This install covers:
   - golang
