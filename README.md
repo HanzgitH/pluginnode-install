@@ -74,6 +74,9 @@ The new updated node included TLS and updated RPC is currently under testing, fe
     
     ./node_temp.sh
 
+Once completw this will include updated RPC, if updates after Wed 23 Nov 2022, to enable TLS go to the update section and after the gitpull run the `./update` file only.
+
+
 Disclaimer:
 
 This install is to assist and autosetup of the $PLI node, it is essential that each user is aware of maintenance of each node as well as securing a VPS.
