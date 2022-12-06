@@ -75,7 +75,7 @@ The new updated node included TLS and updated RPC is currently under testing, fe
     ./node_temp.sh
 
 Once completd this will include updated RPC, if updated after Wed 23 Nov 2022:
-  To enable TLS go to the update section, `https://github.com/HanzgitH/plugin_update` and after the gitpull run the `./update` file ONLY.
+  To enable TLS go to the update section, `https://github.com/HanzgitH/plugin_update` and after the gitpull run the `./update` file ONLY from your `/home` directory.
 
 Disclaimer:
 
