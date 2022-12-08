@@ -41,7 +41,7 @@ Contents:
       
 Before installation please install git:
 
-  `sudo apt-get install git`
+    sudo apt-get install git
     
   Step 1:
       
