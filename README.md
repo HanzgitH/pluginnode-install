@@ -4,7 +4,7 @@
 
 #Must be installed in `/root` directory.
 
-#This install covers:
+#This install and update covers:
   - golang
   - Docker
   - Postgresql db
@@ -78,7 +78,7 @@ Else, (before Wed 23 Nov 2022 RPC update),
  
 Run the update as normal on your current node.
 
-Disclaimer:
+Disclaimer:&& sudo chmod +x node_temp.sh
 
 This install is to assist and autosetup of the $PLI node, it is essential that each user is aware of maintenance of each node as well as securing a VPS.
 
