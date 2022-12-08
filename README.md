@@ -62,7 +62,7 @@ Before installation please install git:
     ./install_node_apothem.sh   
     
     
-   #Important
+## Important
    
    Keep in mind that you still have to do the Oracle Contract deployment part wich you find here: https://docs.goplugin.co
    
@@ -70,7 +70,7 @@ Before installation please install git:
 
 Once completd this will include updated RPC:
 
-If updated after Wed 23 Nov 2022:
+### If updated after Wed 23 Nov 2022:
 
   To enable TLS go to the update section, `https://github.com/HanzgitH/plugin_update` and after the gitpull run the `./update` file ONLY from your `/home` directory.
   
