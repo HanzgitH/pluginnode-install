@@ -68,14 +68,15 @@ Before installation please install git:
    
    This install does not include any changings to your Firewall you may need to apply in order for the node to run correctly.
 
-Testing:
+Once completd this will include updated RPC:
 
-The new updated node included TLS and updated RPC is currently under testing, feel free to test this, this replaces 3a.
-    
-    ./node_temp.sh
+If updated after Wed 23 Nov 2022:
 
-Once completd this will include updated RPC, if updated after Wed 23 Nov 2022:
   To enable TLS go to the update section, `https://github.com/HanzgitH/plugin_update` and after the gitpull run the `./update` file ONLY from your `/home` directory.
+  
+Else, (before Wed 23 Nov 2022 RPC update),
+ 
+Run the update as normal on your current node.
 
 Disclaimer:
 
@@ -84,6 +85,8 @@ This install is to assist and autosetup of the $PLI node, it is essential that e
 Securing VPS is not included in this guide.
 
 I use this as my personal install of $PLI nodes and is free to share and use at each individual's discression, I take no personal responsibility for the use, distribution and implementation of this install.
+
+It is highly recommeneded to run a test on a none-approved node, if any issues arise from an update or edit, this can be easily fixed before commiting to a working, approved node.
 
 #NodeLife 
 
