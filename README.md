@@ -70,14 +70,11 @@ Before installation please install git:
 
 Once completd this will include updated RPC:
 
-## If updated after Wed 23 Nov 2022:
+## After installation move to the update section for TLS:
 
-  To enable TLS go to the update section, `https://github.com/HanzgitH/plugin_update` and after the gitpull run the `./update` file ONLY from your `/home` directory.
+  To enable TLS go to the update section, `https://github.com/HanzgitH/plugin_update` and after the gitpull run the `./update` file ONLY from your `/home` directory, the RPC is already up to date in the current install.
   
-Else, (before Wed 23 Nov 2022 RPC update),
- 
-Run the update as normal on your current node.
-
+#### If you already have a running node and need to update RPC complete the entire update process.
 
 ### Disclaimer:
 
