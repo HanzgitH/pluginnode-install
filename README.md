@@ -70,7 +70,7 @@ Before installation please install git:
 
 Once completd this will include updated RPC:
 
-### If updated after Wed 23 Nov 2022:
+## If updated after Wed 23 Nov 2022:
 
   To enable TLS go to the update section, `https://github.com/HanzgitH/plugin_update` and after the gitpull run the `./update` file ONLY from your `/home` directory.
   
@@ -78,7 +78,8 @@ Else, (before Wed 23 Nov 2022 RPC update),
  
 Run the update as normal on your current node.
 
-Disclaimer:&& sudo chmod +x node_temp.sh
+
+### Disclaimer:
 
 This install is to assist and autosetup of the $PLI node, it is essential that each user is aware of maintenance of each node as well as securing a VPS.
 
